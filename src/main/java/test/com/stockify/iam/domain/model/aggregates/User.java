@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+@Table(name = "users")
 public class User extends AuditableAbstractAggregateRoot<User> {
 
     @Getter
@@ -21,7 +22,6 @@ public class User extends AuditableAbstractAggregateRoot<User> {
     @Column(unique = true)
     private String username;
 
-    // ← Cambiar esto
     @Setter
     @Getter
     @NotBlank

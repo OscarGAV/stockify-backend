@@ -37,7 +37,7 @@ public class ProductController {
         this.productQueryService = productQueryService;
     }
 
-    @GetMapping("/{productId}")
+    @GetMapping("/id/{productId}")
     public ResponseEntity<ProductResource> getProductById(@PathVariable Long productId) {
         var getProductByIdQuery = new GetProductByIdQuery(productId);
         var product = productQueryService.handle(getProductByIdQuery);
@@ -46,7 +46,7 @@ public class ProductController {
         return ResponseEntity.ok(productResource);
     }
 
-    @GetMapping("/{category}")
+    @GetMapping("/category/{category}")
     public ResponseEntity<List<ProductResource>> getAllProductByCategory(@PathVariable String category) {
         var getProductByCategoryQuery = new GetAllProductsByCategoryQuery(category);
         var products = productQueryService.handle(getProductByCategoryQuery);

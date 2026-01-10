@@ -1,12 +1,14 @@
 package test.com.stockify.productmanagement.domain.model.aggregates;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import test.com.stockify.productmanagement.domain.model.commands.CreateProductCommand;
 import test.com.stockify.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 
 @Getter
 @Entity
+@Table(name = "products")
 public class Product extends AuditableAbstractAggregateRoot<Product> {
     private String name;
     private String description;
